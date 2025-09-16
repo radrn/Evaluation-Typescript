@@ -14,6 +14,18 @@ let fruitArray: Array<string> = [];
                     newFruit.innerHTML = select.value;
                     list.appendChild(newFruit);
 
+                    const deleteBtn:HTMLButtonElement = document.createElement("button")
+                    deleteBtn.innerHTML = "X";
+                    newFruit.appendChild(deleteBtn);
+
+                    deleteBtn.addEventListener('click', () => {
+                        newFruit.remove();
+                        deleteBtn.remove();
+                        fruitNb -= 1;
+                        counter.innerHTML =  "Total : " + fruitNb + " fruit(s)";
+
+                    });
+
                     fruitNb += 1;
                     counter.innerHTML =  "Total : " + fruitNb + " fruit(s)";
 
